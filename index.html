@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="./img/pokeball.png" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <img src="./img/logo.png" alt="Pokédex Logo" class="logo" />
+    </header>
+    <main>
+      <div class="search-area">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Enter Pokémon name or ID..."
+        />
+        <button id="search-button">Search Pokémon</button>
+        <button id="toggle-favourites">View Favourites</button>
+      </div>
+      <div id="loading" class="hidden">
+        <img src="./img/loading.webp" alt="Loading Pokeball" class="spinner" />
+      </div>
+      <div id="pokemon-details" class="card-container centered"></div>
+    </main>
+
+    <div id="pokemon-modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div class="modal-header">
+          <h2 id="modal-name"></h2>
+          <span class="modal-id" id="modal-id"></span>
+        </div>
+        <div class="modal-image-container">
+          <img id="modal-img" src="" alt="Pokemon Image" />
+        </div>
+        <div class="modal-info">
+          <div class="modal-types" id="modal-types">
+            <h3>Types</h3>
+            <div class="types-container"></div>
+          </div>
+          <div class="modal-basic-info">
+            <div class="info-column">
+              <p id="modal-height"><strong>Height:</strong> <span></span></p>
+              <p id="modal-weight"><strong>Weight:</strong> <span></span></p>
+            </div>
+            <div class="info-column">
+              <p id="modal-abilities">Abilities: <span></span></p>
+            </div>
+          </div>
+          <div class="modal-stats-container">
+            <h3>Base Stats</h3>
+            <div id="modal-stats" class="stats-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
